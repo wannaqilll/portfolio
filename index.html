@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Aqil's Portfolio</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 180px;
+            background: #1c1c1c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+            z-index: 1000;
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 220px; /* Space for the fixed navbar */
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+            padding-top: 80px; /* Adds spacing between navbar and section titles */
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #4CAF50; /* Green color for headings */
+        }
+
+        section p {
+            font-size: 18px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #333;
+            position: relative;
+            text-align: center;
+            line-height: 120px;
+            font-size: 20px;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .circle span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .circle:hover {
+            background: #4CAF50;
+        }
+
+        /* Contact Section */
+        .contact-icons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            background: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            background: #388e3c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                width: 120px;
+                padding-top: 20px;
+            }
+
+            main {
+                margin-left: 140px; /* Adjust for mobile */
+            }
+
+            .circle {
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+            }
+
+            section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h1>Mohamed Aqil</h1>
+            <h3>College Student, Passionate About Programming</h3>
+            <p>I'm a student at Sri Krishna Arts and Science College. I'm passionate about programming, learning new technologies, and problem-solving. I enjoy working on various projects related to coding and data.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="circle" data-percent="85"><span>85%</span><p>Python</p></div>
+                <div class="circle" data-percent="70"><span>70%</span><p>C++</p></div>
+                <div class="circle" data-percent="65"><span>65%</span><p>Java</p></div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Details about your projects can go here. For example, a data analysis project, web development projects, etc.</p>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications & Achievements</h2>
+            <p>Award: Prize in Expo - Digital Circuit Models & Simulation (Department of CT and DS, 8th Sep 2023)</p>
+            <p>Certification: Python (Coursera), Stress Management (NPTEL)</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-icons">
+                <a href="https://github.com/wannaqilll" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/wannaqilll" target="_blank">Instagram</a>
+                <a href="mailto:smaq.aqil@gmail.com">Email</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Animate skill circles
+            const circles = document.querySelectorAll(".circle");
+
+            circles.forEach(circle => {
+                const percent = parseInt(circle.getAttribute("data-percent"), 10);
+                const span = circle.querySelector("span");
+
+                if (!isNaN(percent) && span) {
+                    circle.style.background = `conic-gradient(#4caf50 ${percent}%, #333 ${percent}%)`;
+                    span.textContent = `${percent}%`;
+                }
+            });
+
+            // Smooth scrolling for navigation
+            const navLinks = document.querySelectorAll("nav a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", event => {
+                    event.preventDefault();
+                    const target = document.querySelector(link.getAttribute("href"));
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
